@@ -12,7 +12,7 @@ public class SMSMessage extends Message implements IDigital {
     public SMSMessage(String sender, String content, Date sendDate, String phone) throws IllegalArgumentException, PhoneNumberException{
         super(sender, content, sendDate);
         if (phone == null || phone.isBlank()){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("phone is blank");
         }
 
         for (char c : phone.toCharArray()){

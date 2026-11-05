@@ -14,7 +14,7 @@ public class EmailMessage extends Message implements IDigital {
     public EmailMessage(String sender, String content, Date sendDate, String subject, ArrayList<File> attachments) {
         super(sender, content, sendDate);
         if (subject == null || subject.isBlank()){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Subject is null or empty");
         }
         this.subject = subject;
         this.attachments = attachments == null ? new ArrayList<>() : new ArrayList<>(attachments);

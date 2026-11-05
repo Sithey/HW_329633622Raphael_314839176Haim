@@ -18,7 +18,7 @@ public abstract class Message {
 
     public Message(String sender, String content, Date sendDate) throws IllegalArgumentException{
         if (sender == null || content == null || sendDate == null || sender.isBlank() || content.isBlank()){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("sender or content or sendDate is null or empty");
         }
         this.sender = sender;
         this.content = content;
@@ -32,7 +32,7 @@ public abstract class Message {
 
     public void setContent(String content) throws IllegalArgumentException {
         if (content == null || content.isBlank()){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("content is null or empty");
         }
         this.content = content;
         updateModification();

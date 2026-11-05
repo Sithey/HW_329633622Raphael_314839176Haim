@@ -6,7 +6,7 @@ public class File {
 
     public File(String fileName, String fileType) throws IllegalArgumentException{
         if (fileName == null || fileType == null || fileName.isBlank() || fileType.isBlank()){
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("file or type is null or empty");
         }
         this.fileName = fileName;
         this.fileType = fileType;
