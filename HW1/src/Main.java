@@ -10,9 +10,10 @@ import message.sms.SMSMessage;
 import java.util.*;
 
 public class Main {
+    private static final ArrayList<Message> messages = new ArrayList<>();
+    private static final Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args){
-        ArrayList<Message> messages = new ArrayList<>();
         messages.add(new BoardMessage("Raphael", "Hello World !", "Ruppin Team"));
         messages.add(new BoardMessage("Haim", "Hello sir !", null));
 
@@ -20,7 +21,6 @@ public class Main {
         messages.add(new EmailMessage("Raphael", "This is the score of your mail", new Date(), "Test my inbox", new ArrayList<>(List.of(new File("report", "csv")))));
         messages.add(new SMSMessage("Kfir", "How are you Yarin ?", "0511234567"));
         messages.add(new SMSMessage("Yarin", "good !", "0511234565"));
-        Scanner scanner = new Scanner(System.in);
         while (true){
             System.out.println("Welcome to our app, please select the mode: (1-6)");
             System.out.println("1) Add a message");
